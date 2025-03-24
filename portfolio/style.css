@@ -13,8 +13,7 @@ h2 {
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(20) infinite
-    alternate-reverse;
+    animation: typing 2s steps(20) infinite alternate-reverse;
 }
 @keyframes typing {
     from {
