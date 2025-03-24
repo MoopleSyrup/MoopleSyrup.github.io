@@ -4,6 +4,7 @@ html, body {
     text-align: center;
     color: #dff1eb;
     height: 100%;
+    font-size: 14px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,7 @@ h2 {
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(20); /* infinite alternate-reverse; */
+    animation: typing 3s steps(20); /* infinite alternate-reverse; */
 }
 @keyframes typing {
     from {
@@ -27,13 +28,13 @@ h2 {
     }
 }
 .text_title{
-    width: 33ch;
+    width: 60ch;
     margin: 0 auto;
     text-align: center;
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(20);
+    animation: typing 3s steps(20);
 }
 
 /* Text boxes */
@@ -54,6 +55,10 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #27e7a5;
+}
+nav ul li:hover {
+    transition: scale 300ms, filter 300ms;
+    filter: blur(1px);
 }
 
 /* Boxes for gaps between */
@@ -83,6 +88,7 @@ nav ul li a {
 .footer {
     background-color: #071611;
     color: #dff1eb;
+    font-size: 10px;
     text-align: center;
     padding: 20px 0;
     width: 100%;
@@ -114,50 +120,9 @@ nav ul li a {
     transition: transform 0.3s, opacity 0.3s;
 }
 .social-icons a:hover {
-    color: #8ee3c6;
+    transition: scale 300ms, filter 300ms;
+    scale: 0.9;
+    filter: blur(1px);
 }
 
-/* About Styyle */
-/* .card {
-    display: flex;
-    height: 280px;
-    width: 200px;
-    background-color: #17141d;
-    border-radius: 10px;
-    box-shadow: -1rem 0 3rem #000;
-    transition: 0.4s ease-out;
-    position: relative;
-    left: 0px;
-}
-
-.card:not(:first-child) {
-    margin-left: -50px;
-}
-
-.card:hover {
-    transform: translateY(-20px);
-    transition: 0.4s ease-out;
-}
-
-.card:hover ~ .card {
-    position: relative;
-    left: 50px;
-    transition: 0.4s ease-out;
-}
-
-.title {
-    color: white;
-    font-weight: 300;
-    position: absolute;
-    left: 20px;
-    top: 15px;
-}
-
-.bar {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    height: 5px;
-    width: 150px;
-} */
-
+/* Static effect */
