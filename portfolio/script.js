@@ -1,19 +1,25 @@
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const passwordField = document.getElementById("password");
     const togglePasswordButton = document.getElementById("togglePassword");
 
-    // Add an event listener to the "Show/Hide" button
-    togglePasswordButton.addEventListener("click", function () {
-        // Toggle the input type between 'password' and 'text'
+    togglePasswordButton.addEventListener("click", function() {
         const currentType = passwordField.type;
-        passwordField.type = currentType === "password" ? "text" : "password";
+        if (currentType === "password") {
+            passwordField.type = "text"; // Show the password
+            passwordField.classList.add("shown"); // Add class to change style
+            togglePasswordButton.textContent = "Hide"; // Change button text
+        } else {
+            passwordField.type = "password"; // Hide the password
+            passwordField.classList.remove("shown"); // Remove style changes
+            togglePasswordButton.textContent = "Show"; // Change button text
+        }
+        form.classList.add("s--processing");
+                loadingIndicator.classList.add("form__text--step-0");
 
-        // Toggle the button text between 'Show' and 'Hide'
-        togglePasswordButton.textContent = passwordField.type === "password" ? "Show" : "Hide";
+                // Simulate a delay for loading animation
+                setTimeout(function() {
+                    form.classList.remove("s--processing");
+                    loadingIndicator.classList.remove("form__text--step-0");
+                }, 2000);
     });
 });
-
-
-
-

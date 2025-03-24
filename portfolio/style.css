@@ -5,6 +5,7 @@ body {
     color: #dff1eb;
 }
 
+/* Typing Title */
 h2 {
     width: 33ch;
     margin: 0 auto;
@@ -15,23 +16,21 @@ h2 {
     animation: typing 2s steps(20) infinite
     alternate-reverse;
 }
-
 @keyframes typing {
     from {
         width: 0ch;
     }
 }
 
+/* Navigation Box */
 nav ul {
     list-style: none;
     padding: 0;
 }
-
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
-
 nav ul li a {
     text-decoration: none;
     color: #27e7a5;
@@ -41,70 +40,6 @@ nav ul li a {
 .box {
     margin-bottom: 20px;
     padding: 10px;
-}
-
-/* Password Box */
-.form__text {
-    position: absolute;
-    left: 0; top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; height: 100%;
-    opacity: 0;
-    transform: translateY(20px);
-    will-change: opacity, transform;
-    pointer-events: none;
-}
-.form.s--processing .form__text {
-    transition: all 0.4s;
-}
-.form__text--step-0 {
-    opacity: 1;
-    transform: translateY(0);
-}
-.form__text-dots:before,
-.form__text-dots:after {
-    content: "."; 
-    opacity: 0;
-    animation: dotAnimation 1.5s infinite;
-}
-@keyframes dotAnimation {
-    10%, 90% {
-        opacity: 0;
-    }
-    40%, 60% {
-        opacity: 1;
-    }
-}
-
-input[type="password"] {
-    font-family: "Space Mono", monospace;
-    font-size: 12px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #8ee3c6;
-}
-button {
-    font-family: "Space Mono", monospace;
-    font-size: 12px;
-    padding: 5px;
-    background-color: #198a63;
-    color: #dff1eb;
-    height: 30px;
-    width: 100px;
-    top: 100%;
-    left: 100%;
-    border-radius: 4px;
-    transition: all 0.7s;
-}
-button:hover {
-    top: -30px;
-    left: -30px;
-}
-button:active {
-    background: #27e7a5;
-    transition: background 0s;
 }
 
 /* Fluid Layout */
