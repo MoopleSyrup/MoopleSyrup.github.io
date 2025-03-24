@@ -21,7 +21,6 @@ h2 {
     }
 }
 
-/* Text boxes */
 .text_title{
     width: 33ch;
     margin: 0 auto;
@@ -32,6 +31,7 @@ h2 {
     animation: typing 2s steps(20);
 }
 
+/* Text boxes */
 .text_box {
     width: 1000px;
     margin: 0 auto;
