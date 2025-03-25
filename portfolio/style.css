@@ -35,8 +35,11 @@ h2 {
 
 /* Text boxes */
 .text_box {
-    width: 1000px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: flex-end;;
 }
 
 /* Navigation Box */
@@ -86,14 +89,17 @@ nav ul li:hover {
     color: #dff1eb;
     font-size: 10px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: flex-end;
 }
 .footer-container {
     display: flex;
     justify-content: space-evenly; 
-    align-items: center;
+    align-items: flex-end;
 }
 .footer-section h3 {
     margin-bottom: 10px;
