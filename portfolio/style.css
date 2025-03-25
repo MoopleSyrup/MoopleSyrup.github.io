@@ -6,10 +6,6 @@ html, body {
     height: 100%;
     font-size: 14px;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 20px;
 }
 
 /* Typing Title */
@@ -125,4 +121,3 @@ nav ul li:hover {
     filter: blur(1px);
 }
 
-/* Static effect */
