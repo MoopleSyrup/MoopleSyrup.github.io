@@ -17,17 +17,19 @@ const columns = Math.floor(canvas.width / fontsize);
 const rainDrops = new Array(columns).fill(1);
 
 const draw = () => {
-    context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    // More transparent background for better fading effect
+    context.fillStyle = 'rgba(7, 22, 17, 0.05)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.fillStyle = '#0F0';
+    context.fillStyle = '#246d50';
+    context.globalAlpha = 1; // Make text semi-transparent
     context.font = `${fontsize}px monospace`;
 
     for (let i = 0; i < rainDrops.length; i++) {
         const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
         context.fillText(text, i * fontsize, rainDrops[i] * fontsize);
 
-        if (rainDrops[i] * fontsize > canvas.height && Math.random() > 0.975) {
+        if (rainDrops[i] * fontsize > canvas.height && Math.random() > 0.92) {
             rainDrops[i] = 0;
         }
         rainDrops[i]++;
@@ -35,7 +37,7 @@ const draw = () => {
 };
 
 // Redraw every 30ms
-setInterval(draw, 30);
+setInterval(draw, 40);
 
 // Adjust canvas size when window resizes
 window.addEventListener('resize', () => {
