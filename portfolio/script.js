@@ -39,6 +39,10 @@ const draw = () => {
 // Redraw every 30ms
 setInterval(draw, 40);
 
+
+
+
+
 // Adjust canvas size when window resizes
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
@@ -46,3 +50,5 @@ window.addEventListener('resize', () => {
     rainDrops.length = Math.floor(canvas.width / fontsize);
     rainDrops.fill(1);
 });
+
+

@@ -9,35 +9,40 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    overflow: hidden;
+    justify-content: flex-start; /* Change from center to start */
+    margin-top: 60px; /* Adjust this to match the height of your navbar */
 }
 .content {
     flex: 1;
     padding: 20px;
+    width: 100%; /* Ensure content doesn't overflow */
+    margin-top: 60px; /* Same as navbar height, to avoid overlap */
 }
 
 /* Matrix behind everything */
 canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1; /* Puts it behind everything */
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Puts it behind everything */
+}
 
 /* Typing Title */
 h2 {
+    position: relative; /* Make sure it is positioned normally in the document flow */
+    z-index: 1; /* Ensure it's above the background canvas */
     width: 33ch;
-    margin: 0 auto;
+    margin: 20px auto; /* Add some space around it */
     text-align: center;
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
     overflow: hidden;
-    animation: typing 3s steps(20); /* infinite alternate-reverse; */
+    animation: typing 3s steps(20);
 }
+
+/* Typing animation */
 @keyframes typing {
     from {
         width: 0ch;
@@ -65,22 +70,41 @@ h2 {
 }
 
 /* Navigation Box */
+/* Make sure the navbar is fixed at the top */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222; /* Or whatever background you prefer */
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it's above everything */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Make the links appear in a row */
+    justify-content: center;
+    margin: 0;
 }
+
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #27e7a5;
+    font-size: 16px;
 }
-nav ul li:hover {
+
+nav ul li a:hover {
+    color: #a8ffe1; 
     transition: scale 300ms, filter 300ms;
-    filter: blur(1px);
+    /* filter: blur(1px); */
 }
+
 
 /* Boxes for gaps between */
 .box {
@@ -103,6 +127,61 @@ nav ul li:hover {
 }
 .button{
     flex: 1 0 5rem;
+}
+
+/* Projects Pictures */
+/* Projects Section */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Individual Project Tiles */
+.project-tile {
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+
+/* Hover effect */
+.project-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #27e7a5;
+}
+
+/* Project Images */
+.project-tile img {
+    width: 100%;  /* Make images responsive */
+    max-width: 300px;  /* Prevent them from getting too big */
+    height: 300px;  /* Fixed height */
+    object-fit: cover;
+}
+
+/* Project Titles */
+.project-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: inline-block;
+}
+
+/* Ensure the project title always stays the same color */
+.project-tile h3 {
+    color: #dff1eb; 
+    transition: color 0.3s ease; 
+}
+
+/* Prevent color change on hover and active states */
+.project-link:visited .project-tile h3,
+.project-link:active .project-tile h3,
+.project-link:hover .project-tile h3 {
+    color: #dff1eb; 
 }
 
 /* Footer sectioning */
@@ -150,3 +229,4 @@ nav ul li:hover {
     scale: 0.9;
     filter: blur(1px);
 }
+
