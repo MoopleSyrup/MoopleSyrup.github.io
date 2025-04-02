@@ -21,7 +21,7 @@ const draw = () => {
     context.fillStyle = 'rgba(7, 22, 17, 0.05)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.fillStyle = '#246d50';
+    context.fillStyle = '#0E4732';
     context.globalAlpha = 1; // Make text semi-transparent
     context.font = `${fontsize}px monospace`;
 
