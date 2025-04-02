@@ -1,7 +1,5 @@
 html, body {
-    /* background-color: #071611; */
     font-family: "Space Mono", monospace;
-    text-align: center;
     color: #dff1eb;
     height: 100%;
     font-size: 14px;
@@ -9,14 +7,17 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Change from center to start */
-    margin-top: 60px; /* Adjust this to match the height of your navbar */
+    justify-content: flex-start;
+    text-align: center; /* Ensure all text is centered */
 }
+
 .content {
     flex: 1;
     padding: 20px;
-    width: 100%; /* Ensure content doesn't overflow */
-    margin-top: 60px; /* Same as navbar height, to avoid overlap */
+    width: 100%;
+    margin-top: 60px; /* To avoid overlap with navbar */
+    position: relative;
+    z-index: 0; /* Ensure content is below the heading */
 }
 
 /* Matrix behind everything */
@@ -26,7 +27,7 @@ canvas {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Puts it behind everything */
+    z-index: -1; /* Background */
 }
 
 /* Typing Title */
@@ -62,12 +63,13 @@ h2 {
 .text_box {
     display: flex;
     justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
     align-items: center;
-    width: 50%;
+    width: 100%; /* Ensure full width */
+    max-width: 800px; /* Optional: To limit the text box's width */
+    margin: 0 auto; /* Center the text box */
     text-align: center;
 }
+
 
 /* Navigation Box */
 /* Make sure the navbar is fixed at the top */
@@ -76,9 +78,9 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #222; /* Or whatever background you prefer */
+    background-color: rgba(7, 22, 17, 0.05); /* Adjust this as needed */
     padding: 10px 0;
-    z-index: 1000; /* Ensure it's above everything */
+    z-index: 1000; /* Ensure navbar is on top */
 }
 
 nav ul {
@@ -129,7 +131,42 @@ nav ul li a:hover {
     flex: 1 0 5rem;
 }
 
-/* Projects Pictures */
+/* Styling for the About Section */
+.about-section {
+    text-align: center;
+    margin-top: 80px;  /* Adjust this to ensure no overlap with the navbar */
+}
+
+/* Image Gallery Container */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between images */
+    margin-top: 20px;
+}
+
+/* Image Item (Each individual image block) */
+.image-item {
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Ensure images are responsive and have a uniform size */
+.image-item img {
+    width: 100%;
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for the images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for Image captions */
+.image-item p {
+    color: #dff1eb;
+    margin-top: 8px;
+    font-size: 14px;
+    font-family: "Space Mono", monospace;
+}
+
 /* Projects Section */
 .projects {
     display: grid;

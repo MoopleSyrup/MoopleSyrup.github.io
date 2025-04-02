@@ -39,10 +39,6 @@ const draw = () => {
 // Redraw every 30ms
 setInterval(draw, 40);
 
-
-
-
-
 // Adjust canvas size when window resizes
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
