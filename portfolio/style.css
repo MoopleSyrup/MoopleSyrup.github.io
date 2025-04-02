@@ -7,7 +7,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: center; /* Ensure all text is centered */
 }
 
@@ -256,13 +256,22 @@ nav ul li a:hover {
 }
 .footer-container {
     display: flex;
-    justify-content: space-evenly; 
-    align-items: center; /* Ensures icons align properly */
-    flex-wrap: wrap; /* Prevents overflow issues */
+    flex-direction: column; /* Stacks sections vertically */
+    justify-content: flex-end; /* Keeps content at the bottom */
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Makes footer container take full height */
+    padding-top: 50px; /* Adjust top padding for spacing */
+    padding-bottom: 20px; /* Optional: Gives padding at the bottom */
 }
 
 .footer-section {
-    text-align: center; /* Centers text under icons */
+    text-align: center;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically within each section */
+    align-items: center; /* Centers items horizontally within the section */
 }
 
 .footer-section h3 {
@@ -283,11 +292,22 @@ nav ul li a:hover {
     color: #8ee3c6;
 }
 
+/* Increase margin-bottom to create more space between Location and Social Icons */
+.footer-section.location {
+    margin-bottom: 80px; /* Adjust the value for a wider gap */
+}
+
+/* Social icons section */
+.footer-section.social-icons {
+    margin-top: 40px; /* Additional space for social icons, if needed */
+}
+
 .social-icons {
     display: flex;
-    gap: 15px; /* Spaces icons evenly */
-    justify-content: center; /* Centers them properly */
+    gap: 15px;
+    justify-content: center;
     align-items: center;
+    height: 100%; /* Ensures icons stretch and align vertically within the container */
 }
 
 .social-icons a {
@@ -303,6 +323,7 @@ nav ul li a:hover {
 }
 
 .social-icons a:hover .icon {
-    transform: scale(0.9);
+    transform: scale(0.9); /* Ensures proper hover effect */
     filter: blur(1px);
 }
+
