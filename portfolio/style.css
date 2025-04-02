@@ -214,6 +214,31 @@ nav ul li a:hover {
 .project-link:hover .project-tile h3 {
     color: #dff1eb; 
 }
+/* Skills */
+.icon-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    flex-wrap: wrap; /* Allows icons to wrap to new lines */
+    grid-gap: 150px; /* Space between icons */
+    justify-content: center;
+}
+.icon-container img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    object-fit: contain; /* Ensures the image scales well */
+}
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .icon-container img:hover {
+    transform: scale(1.1);
+} */
+.icon p {
+    margin-top: 8px;
+    font-size: 16px;
+}
 
 /* Footer sectioning */
 .footer {
@@ -232,14 +257,20 @@ nav ul li a:hover {
 .footer-container {
     display: flex;
     justify-content: space-evenly; 
-    align-items: flex-end;
-    
+    align-items: center; /* Ensures icons align properly */
+    flex-wrap: wrap; /* Prevents overflow issues */
 }
+
+.footer-section {
+    text-align: center; /* Centers text under icons */
+}
+
 .footer-section h3 {
     margin-bottom: 10px;
     font-size: 18px;
     color: #dff1eb;
 }
+
 .footer-section a {
     text-decoration: none;
     color: #dff1eb;
@@ -247,17 +278,31 @@ nav ul li a:hover {
     margin: 5px 0;
     transition: color 0.3s;
 }
+
 .footer-section a:hover {
     color: #8ee3c6;
 }
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Spaces icons evenly */
+    justify-content: center; /* Centers them properly */
+    align-items: center;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .icon {
     width: 30px;
     height: 30px;
     transition: transform 0.3s, opacity 0.3s;
 }
-.social-icons a:hover {
-    transition: scale 300ms, filter 300ms;
-    scale: 0.9;
+
+.social-icons a:hover .icon {
+    transform: scale(0.9);
     filter: blur(1px);
 }
-
