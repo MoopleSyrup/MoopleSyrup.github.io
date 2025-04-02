@@ -11,18 +11,18 @@ const nums = '0123456789';
 // Correctly combine the characters into one string
 const alphabet = katakana + latin + nums;
 
-const fontsize = 16;
+const fontsize = 14;
 const columns = Math.floor(canvas.width / fontsize);
 
 const rainDrops = new Array(columns).fill(1);
 
 const draw = () => {
     // More transparent background for better fading effect
-    context.fillStyle = 'rgba(7, 22, 17, 0.05)';
+    context.fillStyle = 'rgba(7, 22, 17, 0.15)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     context.fillStyle = '#0E4732';
-    context.globalAlpha = 1; // Make text semi-transparent
+    
     context.font = `${fontsize}px monospace`;
 
     for (let i = 0; i < rainDrops.length; i++) {
@@ -30,13 +30,12 @@ const draw = () => {
         context.fillText(text, i * fontsize, rainDrops[i] * fontsize);
 
         if (rainDrops[i] * fontsize > canvas.height && Math.random() > 0.92) {
-            rainDrops[i] = 0;
+            rainDrops[i] = 1;
         }
         rainDrops[i]++;
     }
 };
 
-// Redraw every 30ms
 setInterval(draw, 40);
 
 // Adjust canvas size when window resizes

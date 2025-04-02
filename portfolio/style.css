@@ -179,42 +179,36 @@ nav ul li a:hover {
 
 /* Individual Project Tiles */
 .project-tile {
-    background: #222;
+    background: rgba(7, 22, 17, 0.05);
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
 
-
-/* Hover effect */
-.project-tile:hover {
+/* .project-tile:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px #27e7a5;
-}
+    box-shadow: 0 0 5px #27e7a5;
+} */
 
-/* Project Images */
 .project-tile img {
     width: 100%;  /* Make images responsive */
     max-width: 300px;  /* Prevent them from getting too big */
     height: 300px;  /* Fixed height */
     object-fit: cover;
+    border-radius: 20px;
 }
 
-/* Project Titles */
 .project-link {
     text-decoration: none; 
     color: inherit; 
     display: inline-block;
 }
 
-/* Ensure the project title always stays the same color */
 .project-tile h3 {
     color: #dff1eb; 
     transition: color 0.3s ease; 
 }
-
-/* Prevent color change on hover and active states */
 .project-link:visited .project-tile h3,
 .project-link:active .project-tile h3,
 .project-link:hover .project-tile h3 {
