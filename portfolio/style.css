@@ -39,7 +39,7 @@ h2 {
     text-align: center;
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     animation: typing 3s steps(20);
 }
 
@@ -55,7 +55,7 @@ h2 {
     text-align: center;
     font-family: "Space Mono", monospace;
     text-wrap: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     animation: typing 3s steps(20);
 }
 
@@ -193,10 +193,10 @@ nav ul li a:hover {
 
 .project-tile img {
     width: 100%;  /* Make images responsive */
-    max-width: 300px;  /* Prevent them from getting too big */
-    height: 300px;  /* Fixed height */
+    max-width: 200px;  /* Prevent them from getting too big */
+    height: 200px;  /* Fixed height */
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .project-link {
@@ -214,6 +214,7 @@ nav ul li a:hover {
 .project-link:hover .project-tile h3 {
     color: #dff1eb; 
 }
+
 /* Skills */
 .icon-container {
     display: grid;
@@ -226,18 +227,41 @@ nav ul li a:hover {
     width: 80px; /* Adjust size as needed */
     height: 80px;
     object-fit: contain; /* Ensures the image scales well */
+    transition: transform 0.3s ease-in-out;
+    animation: floatAnimation 3s ease-in-out infinite;
 }
 .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* .icon-container img:hover {
-    transform: scale(1.1);
-} */
+.icon-container img:hover {
+    animation: pulseAnimation 0.6s ease-in-out infinite;
+}
+.icon-container img.rotate {
+    animation: rotateAnimation 5s linear infinite; /* Continuous rotation */
+}
 .icon p {
     margin-top: 8px;
     font-size: 16px;
+}
+
+/* Skills Animation effects */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Footer sectioning */
