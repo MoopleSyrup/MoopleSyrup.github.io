@@ -177,43 +177,71 @@ nav ul li a:hover {
     margin: auto;
 }
 
-/* Individual Project Tiles */
-.project-tile {
-    background: rgba(7, 22, 17, 0.05);
-    padding: 10px;
+.flip-card {
+    background: transparent;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 22, 17, 0.05);
     overflow: hidden;
 }
 
-/* .project-tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 5px #27e7a5;
-} */
-
-.project-tile img {
-    width: 100%;  /* Make images responsive */
-    max-width: 200px;  /* Prevent them from getting too big */
-    height: 200px;  /* Fixed height */
+.flip-card-front img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.project-link {
-    text-decoration: none; 
-    color: inherit; 
-    display: inline-block;
+.flip-card-front h3 {
+    margin-top: 10px;
+    color: #dff1eb;
 }
 
-.project-tile h3 {
-    color: #dff1eb; 
-    transition: color 0.3s ease; 
+.flip-card-back {
+    background-color: #0f2f26;
+    color: #dff1eb;
+    transform: rotateY(180deg);
+    text-align: center;
 }
-.project-link:visited .project-tile h3,
-.project-link:active .project-tile h3,
-.project-link:hover .project-tile h3 {
-    color: #dff1eb; 
+
+.flip-card-back a {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #27e7a5;
+    font-weight: bold;
+    transition: color 0.3s;
 }
+
+.flip-card-back a:hover {
+    color: #3fffd0;
+}
+
 
 /* Skills */
 .icon-container {
