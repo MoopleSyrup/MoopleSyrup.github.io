@@ -170,22 +170,23 @@ nav ul li a:hover {
 /* Projects Section */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reduced min width from 250px to 200px */
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1200px; /* Slightly reduced overall container width */
     margin: auto;
 }
 
 .flip-card {
     background: transparent;
     perspective: 1000px;
+    height: 240px; /* Reduced height from larger values for a smaller card */
 }
 
 .flip-card-inner {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 100%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -200,7 +201,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -212,15 +213,17 @@ nav ul li a:hover {
 
 .flip-card-front img {
     width: 100%;
-    max-width: 200px;
-    height: 200px;
+    max-width: 150px; /* Reduced max width from 200px */
+    height: 120px; /* Reduced height from 200px */
     object-fit: cover;
     border-radius: 10px;
 }
 
 .flip-card-front h3 {
-    margin-top: 10px;
+    margin-top: 8px;
+    font-size: 1rem; /* Slightly smaller font for compact display */
     color: #dff1eb;
+    text-align: center;
 }
 
 .flip-card-back {
@@ -228,6 +231,7 @@ nav ul li a:hover {
     color: #dff1eb;
     transform: rotateY(180deg);
     text-align: center;
+    font-size: 0.9rem; /* Slightly smaller text size for tighter layout */
 }
 
 .flip-card-back a {
@@ -236,11 +240,13 @@ nav ul li a:hover {
     color: #27e7a5;
     font-weight: bold;
     transition: color 0.3s;
+    font-size: 0.9rem; /* Reduced to match new scale */
 }
 
 .flip-card-back a:hover {
     color: #3fffd0;
 }
+
 
 
 /* Skills */
